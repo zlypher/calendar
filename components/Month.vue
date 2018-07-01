@@ -27,11 +27,25 @@ export default {
 
 <style>
 .Month {
+  transition: border 150ms ease-in-out;
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 0 0;
   border: 1px solid lightgrey;
-  margin: 0 4px
+  margin: 0 4px;
+  width: 50px;
+}
+
+.Month:hover {
+  border: 1px solid red;
+}
+
+.Month:first-child {
+  margin-left: 0;
+}
+
+.Month:last-child {
+  margin-right: 0;
 }
 
 .Month-Name {
@@ -39,5 +53,19 @@ export default {
   padding: 8px;
   font-weight: bold;
   background: lightgrey;
+}
+
+@media screen and (max-width: 700px) {
+  .Month {
+    width: auto;
+    margin: 0 0 1em 0;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .Month-Name {
+    flex-basis: 100%;
+  }
 }
 </style>

@@ -1,18 +1,24 @@
 <template>
-  <section class="container">
+  <main class="container">
     <header>
       <h1 class="title">Calendar Check</h1>
     </header>
+    <Legend />
     <calendar year="2018" />
-  </section>
+    <footer class="footer">
+      Calendar v1.0.0
+    </footer>
+  </main>
 </template>
 
 <script>
 import Calendar from '~/components/Calendar.vue'
+import Legend from '~/components/Legend.vue'
 
 export default {
   components: {
-    Calendar
+    Calendar,
+    Legend
   }
 }
 </script>
@@ -25,7 +31,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 6em 0;
+  padding-top: 4em;
 }
 
 .title {
@@ -34,7 +40,14 @@ export default {
   font-weight: 300;
   font-size: 48px;
   color: #35495e;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   letter-spacing: 1px;
+}
+
+.footer {
+  margin-top: 2em;
+  padding: 0.5em;
+  width: 100%;
+  text-align: right;
 }
 </style>

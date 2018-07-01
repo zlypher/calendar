@@ -1,9 +1,10 @@
 <template>
-  <div class="Day"
-    v-bind:class="{ DayPassed: hasPassed }"
+  <a class="Day"
+    tabindex="0"
+    v-bind:class="{ DayPassed: hasPassed, DayChecked: $store.getters.isChecked(year, month, day) }"
     v-on:click="onClick">
     {{day}}
-  </div>
+  </a>
 </template>
 
 <script>
@@ -11,8 +12,11 @@ export default {
   props: ["year", "month", "day"],
   methods: {
     onClick() {
-      console.log("click");
-      console.log(this);
+      this.$store.commit("toggleDay", {
+        year: this.year,
+        month: this.month,
+        day: this.day
+      });
     }
   },
   computed: {
@@ -21,24 +25,47 @@ export default {
       const now = new Date();
 
       return date < now;
-    }
+    },
   }
 }
 </script>
 
 <style>
 .Day {
-  transition: background-color 50ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 50ms ease-in-out, color 50ms ease-in-out;
   cursor: pointer;
   text-align: center;
   padding: 8px;
+  height: 30px;
+  color: darkgrey;
+  border-bottom: 1px solid lightgray;
+}
+
+.Day:last-child {
+  border-bottom: none;
 }
 
 .DayPassed {
   background-color: #eaeaea;
 }
 
+.Day:focus,
 .Day:hover {
+  color: black;
   background-color: lightgrey;
+}
+
+.DayChecked:hover,
+.DayChecked {
+  background-color: #ff0000;
+}
+
+@media screen and (max-width: 700px) {
+  .Day {
+    flex: 1;
+  }
 }
 </style>
