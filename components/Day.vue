@@ -30,7 +30,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~styles/variables.scss";
+
 .Day {
   display: flex;
   align-items: center;
@@ -38,7 +40,7 @@ export default {
   transition: background-color 50ms ease-in-out, color 50ms ease-in-out;
   cursor: pointer;
   text-align: center;
-  padding: 8px;
+  padding: $space-1;
   height: 30px;
   color: darkgrey;
   border-bottom: 1px solid lightgray;
@@ -49,19 +51,19 @@ export default {
 }
 
 .DayPassed {
-  background-color: #eaeaea;
+  background-color: $state-passed;
 }
 
 .Day:focus,
 .Day:hover {
   color: black;
-  background-color: lightgrey;
+  background-color: $state-hover;
 }
 
 .DayChecked:focus,
 .DayChecked:hover,
 .DayChecked {
-  background-color: #ff0000;
+  background-color: $state-selected;
 }
 
 @media screen and (max-width: 700px) {

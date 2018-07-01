@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   /*
   ** Headers of the page
@@ -33,6 +35,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.resolve.alias["~styles"] = path.join(this.options.rootDir, "styles");
     }
   },
   plugins: [
