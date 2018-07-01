@@ -58,6 +58,7 @@ export default {
   background-color: lightgrey;
 }
 
+.DayChecked:focus,
 .DayChecked:hover,
 .DayChecked {
   background-color: #ff0000;
