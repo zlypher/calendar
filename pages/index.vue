@@ -6,6 +6,9 @@
     <Legend />
     <calendar year="2018" />
     <footer class="footer">
+      <span class="footerLeft">
+        <a class="footerResetLink" v-on:click="onResetClick">Reset Calendar</a>
+      </span>
       Calendar v1.0.0
     </footer>
   </main>
@@ -19,6 +22,11 @@ export default {
   components: {
     Calendar,
     Legend
+  },
+  methods: {
+    onResetClick() {
+      this.$store.commit("resetCalendar");
+    }
   }
 }
 </script>
@@ -49,5 +57,13 @@ export default {
   padding: 0.5em;
   width: 100%;
   text-align: right;
+}
+
+.footerLeft {
+  float: left;
+}
+
+.footerResetLink {
+  cursor: pointer;
 }
 </style>

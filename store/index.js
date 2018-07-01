@@ -17,6 +17,9 @@ const createStore = () => {
           ...state.calendar,
           [key]: !!!current
         };
+      },
+      resetCalendar (state) {
+        state.calendar = {};
       }
     },
     getters: {
