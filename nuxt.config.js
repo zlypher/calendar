@@ -36,7 +36,7 @@ module.exports = {
         })
       }
 
-      config.resolve.alias["~styles"] = path.join(this.options.rootDir, "styles");
+      config.resolve.alias["~assets"] = path.join(this.options.rootDir, "assets");
     }
   },
   plugins: [
