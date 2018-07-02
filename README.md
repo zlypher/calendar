@@ -23,11 +23,11 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## Roadmap
 
-[] Review vulnerability alert
-[] Deploy project somewhere
-[] Update description and topics
-[] Improve basic styling
-[] Add better keyboard support
+- [ ] Review vulnerability alert
+- [x] Deploy project somewhere
+- [ ] Update description and topics
+- [ ] Improve basic styling
+- [ ] Add better keyboard support
 
 ## License
 
