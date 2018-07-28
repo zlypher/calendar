@@ -1,7 +1,9 @@
 <template>
   <section class="Month">
     <header class="Month-Name">{{ getMonthName(month) }}</header>
-    <day v-for="day in noDays" :key="day.index" :year="year" :month="month" :day="day" />
+    <div class="Month-Days">
+      <day v-for="day in noDays" :key="day.index" :year="year" :month="month" :day="day" />
+    </div>
   </section>
 </template>
 
@@ -28,12 +30,15 @@ export default {
 <style>
 .Month {
   transition: border 150ms ease-in-out;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 0;
   border: 1px solid lightgrey;
   margin: 0 4px;
   width: 50px;
+}
+
+.Month-Days {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
 }
 
 .Month:hover {
@@ -59,9 +64,12 @@ export default {
   .Month {
     width: auto;
     margin: 0 0 1em 0;
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
+  }
+
+  .Month-Days {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-row-gap: 1px;
   }
 
   .Month-Name {

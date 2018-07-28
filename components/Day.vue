@@ -69,6 +69,7 @@ export default {
 @media screen and (max-width: 700px) {
   .Day {
     flex: 1;
+    border-bottom: none;
   }
 }
 </style>
