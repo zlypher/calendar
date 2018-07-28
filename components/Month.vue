@@ -27,53 +27,55 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~assets/variables.scss";
+
 .Month {
   transition: border 150ms ease-in-out;
   border: 1px solid lightgrey;
   margin: 0 4px;
   width: 50px;
+
+  &:hover {
+    border: 1px solid red;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &-Days {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+  }
+
+  &-Name {
+    text-align: center;
+    padding: $space-1;
+    font-weight: bold;
+    background: lightgrey;
+  }
 }
 
-.Month-Days {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 0;
-}
-
-.Month:hover {
-  border: 1px solid red;
-}
-
-.Month:first-child {
-  margin-left: 0;
-}
-
-.Month:last-child {
-  margin-right: 0;
-}
-
-.Month-Name {
-  text-align: center;
-  padding: 8px;
-  font-weight: bold;
-  background: lightgrey;
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $bp-calendar) {
   .Month {
     width: auto;
     margin: 0 0 1em 0;
-  }
 
-  .Month-Days {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    grid-row-gap: 1px;
-  }
+    &-Days {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto;
+      grid-row-gap: 1px;
+    }
 
-  .Month-Name {
-    flex-basis: 100%;
+    &-Name {
+      flex-basis: 100%;
+    }
   }
 }
 </style>

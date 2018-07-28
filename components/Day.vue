@@ -56,7 +56,7 @@ export default {
 
 .Day:focus,
 .Day:hover {
-  color: black;
+  color: $color-black;
   background-color: $state-hover;
 }
 

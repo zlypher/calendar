@@ -33,6 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~assets/variables.scss";
+
 .Legend {
   display: flex;
   padding: 1em;
@@ -49,7 +51,7 @@ export default {
 
 .LegendItem {
   position: relative;
-  padding: 0 1em 0 16px;
+  padding: 0 1em 0 $space-2;
 }
 
 .LegendItemBox {

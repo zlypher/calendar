@@ -15,17 +15,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~assets/variables.scss";
+
 .Calendar {
   display: flex;
   flex-direction: row;
   align-items: start;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $bp-calendar) {
   .Calendar {
     flex-direction: column;
-    padding: 16px;
+    padding: $space-2;
   }
 }
 </style>
