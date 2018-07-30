@@ -1,6 +1,6 @@
 # calendar
 
-> Nuxt.js project
+Calendar is a small application to rate each day of the year and have a visual representation of your happiness throughout the year.
 
 ## Build Setup
 
@@ -25,7 +25,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 - [x] Review vulnerability alert
 - [x] Deploy project somewhere
-- [ ] Update description and topics
+- [x] Update description and topics
 - [ ] Improve basic styling
 - [ ] Add better keyboard support
 
