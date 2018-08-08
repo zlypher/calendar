@@ -2,7 +2,8 @@
   <a class="Day"
     tabindex="0"
     v-bind:class="{ DayPassed: hasPassed }"
-    v-on:click="onClick">
+    v-on:click="onClick"
+    v-on:keyup.enter="onClick">
     {{day}}
     <div class="Day-Checked"
       v-if="$store.getters.isChecked(year, month, day)">
