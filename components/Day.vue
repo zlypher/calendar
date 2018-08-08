@@ -7,9 +7,9 @@
     {{day}}
     <div class="Day-Checked"
       v-if="$store.getters.isChecked(year, month, day)">
-      <svg viewbox="0 0 30 30" class="Day-svg">
-        <line x1="4" x2="26" y1="4" y2="26" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
-        <line x1="26" x2="4" y1="4" y2="26" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
+      <svg viewbox="0 0 24 24" class="Day-svg">
+        <line x1="4" x2="20" y1="4" y2="20" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
+        <line x1="20" x2="4" y1="4" y2="20" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
       </svg>
     </div>
   </a>
@@ -66,13 +66,16 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   user-select: none;
   pointer-events: none;
 }
 
 .Day-svg {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .DayPassed {
