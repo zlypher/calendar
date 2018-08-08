@@ -1,9 +1,16 @@
 <template>
   <a class="Day"
     tabindex="0"
-    v-bind:class="{ DayPassed: hasPassed, DayChecked: $store.getters.isChecked(year, month, day) }"
+    v-bind:class="{ DayPassed: hasPassed }"
     v-on:click="onClick">
     {{day}}
+    <div class="Day-Checked"
+      v-if="$store.getters.isChecked(year, month, day)">
+      <svg viewbox="0 0 30 30" class="Day-svg">
+        <line x1="4" x2="26" y1="4" y2="26" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
+        <line x1="26" x2="4" y1="4" y2="26" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
   </a>
 </template>
 
@@ -34,6 +41,7 @@ export default {
 @import "~assets/variables.scss";
 
 .Day {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,11 +51,27 @@ export default {
   padding: $space-1;
   height: 30px;
   color: darkgrey;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid $color-grey-2;
+  user-select: none;
 }
 
 .Day:last-child {
   border-bottom: none;
+}
+
+.Day-Checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.Day-svg {
+  width: 30px;
+  height: 30px;
 }
 
 .DayPassed {
@@ -58,12 +82,6 @@ export default {
 .Day:hover {
   color: $color-black;
   background-color: $state-hover;
-}
-
-.DayChecked:focus,
-.DayChecked:hover,
-.DayChecked {
-  background-color: $state-selected;
 }
 
 @media screen and (max-width: 700px) {

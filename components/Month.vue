@@ -32,12 +32,12 @@ export default {
 
 .Month {
   transition: border 150ms ease-in-out;
-  border: 1px solid lightgrey;
+  border: 1px solid $color-grey-2;
   margin: 0 4px;
   width: 50px;
 
   &:hover {
-    border: 1px solid red;
+    border: 1px solid $color-grey-3;
   }
 
   &:first-child {
@@ -58,7 +58,8 @@ export default {
     text-align: center;
     padding: $space-1;
     font-weight: bold;
-    background: lightgrey;
+    color: #343a40;
+    background: $color-grey-2;
   }
 }
 

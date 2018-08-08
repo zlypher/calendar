@@ -3,7 +3,6 @@
     <header>
       <h1 class="title">Calendar Check</h1>
     </header>
-    <Legend />
     <calendar year="2018" />
     <footer class="footer">
       <span class="footerLeft">
@@ -16,12 +15,10 @@
 
 <script>
 import Calendar from '~/components/Calendar.vue'
-import Legend from '~/components/Legend.vue'
 
 export default {
   components: {
-    Calendar,
-    Legend
+    Calendar
   },
   methods: {
     onResetClick() {

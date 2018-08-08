@@ -1,9 +1,12 @@
 // Colors
 $color-black: #000000;
+$color-grey-1: #f8f9fa;
+$color-grey-2: #eaeaea;
+$color-grey-3: #6c757d;
 
 // States
-$state-hover: lightgrey;
-$state-passed: #eaeaea;
+$state-hover: $color-grey-2;
+$state-passed: $color-grey-1;
 $state-selected: red;
 
 // Spacing
