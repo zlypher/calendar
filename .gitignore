@@ -12,3 +12,6 @@ dist
 
 # User specific
 .vscode
+
+# Firebase
+.firebaserc
