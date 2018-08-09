@@ -6,7 +6,7 @@
     v-on:keyup.enter="onClick">
     {{day}}
     <div class="Day-Checked"
-      v-if="$store.getters.isChecked(year, month, day)">
+      v-show="$store.getters.isChecked(year, month, day)">
       <svg viewbox="0 0 24 24" class="Day-svg">
         <line x1="4" x2="20" y1="4" y2="20" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
         <line x1="20" x2="4" y1="4" y2="20" stroke="#6c757d" stroke-width="5" stroke-linecap="round"/>
