@@ -4,12 +4,12 @@
       <h1 class="title">Calendar Check</h1>
     </header>
     <calendar year="2018" />
-    <footer class="footer">
+    <!-- <footer class="footer">
       <span class="footerLeft">
         <a class="footerResetLink" v-on:click="onResetClick">Reset Calendar</a>
       </span>
       Calendar v1.0.0
-    </footer>
+    </footer> -->
   </main>
 </template>
 
@@ -49,7 +49,7 @@ export default {
   letter-spacing: 1px;
 }
 
-.footer {
+/* .footer {
   margin-top: 2em;
   padding: 0.5em;
   width: 100%;
@@ -62,5 +62,5 @@ export default {
 
 .footerResetLink {
   cursor: pointer;
-}
+} */
 </style>
