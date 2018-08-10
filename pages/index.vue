@@ -1,66 +1,49 @@
 <template>
-  <main class="container">
-    <header>
-      <h1 class="title">Calendar Check</h1>
+  <main>
+    <header class="header" style="background-image: url('/home-banner.jpg');">
+      <div class="container">
+        <h1 class="header-text">Chain Calendar</h1>
+      </div>
     </header>
-    <calendar year="2018" />
-    <footer class="footer">
-      <span class="footerLeft">
-        <a class="footerResetLink" v-on:click="onResetClick">Reset Calendar</a>
-      </span>
-      Calendar v1.0.0
-    </footer>
+    <div class="container">
+      <p class="leadin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <nuxt-link to="/calendar">Checkout Demo</nuxt-link>
+    </div>
   </main>
 </template>
 
 <script>
-import Calendar from '~/components/Calendar.vue'
-
 export default {
-  components: {
-    Calendar
-  },
-  methods: {
-    onResetClick() {
-      this.$store.commit("resetCalendar");
-    }
-  }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 2em;
+.header {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 32px;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
+.header-text {
+  position: absolute;
+  bottom: 0;
+  padding: 16px 32px 0;
+  background-color: white;
+  font-weight: 600;
   font-size: 48px;
-  color: #35495e;
-  margin-bottom: 0.5em;
-  letter-spacing: 1px;
 }
 
-.footer {
-  margin-top: 2em;
-  padding: 0.5em;
-  width: 100%;
-  text-align: right;
+.leadin {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
-.footerLeft {
-  float: left;
-}
-
-.footerResetLink {
-  cursor: pointer;
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 </style>
