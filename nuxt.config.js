@@ -39,6 +39,11 @@ module.exports = {
       config.resolve.alias["~assets"] = path.join(this.options.rootDir, "assets");
     }
   },
+  modules: [
+    ["@nuxtjs/google-analytics", {
+      id: "UA-123725662-1"
+    }]
+  ],
   plugins: [
     { src: "~/plugins/localStorage", ssr: false }
   ]
