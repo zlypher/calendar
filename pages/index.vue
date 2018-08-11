@@ -40,11 +40,4 @@ export default {
   line-height: 1.5;
   font-weight: 600;
 }
-
-.container {
-  max-width: 100%;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
 </style>
