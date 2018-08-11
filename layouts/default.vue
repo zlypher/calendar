@@ -3,7 +3,8 @@
     <nav class="nav">
       <div class="u-container nav-content">
         TODO
-        <nuxt-link class="nav-btn" to="/login">Login</nuxt-link>
+        <nuxt-link v-if="!user" class="nav-btn" to="/login">Login</nuxt-link>
+        <span v-if="user">{{ user.displayName }}</span>
       </div>
     </nav>
     <nuxt/>
@@ -14,6 +15,16 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    user () {
+      return this.$store.getters.activeUser
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import "~assets/variables.scss";

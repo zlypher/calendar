@@ -45,6 +45,7 @@ module.exports = {
     }]
   ],
   plugins: [
-    { src: "~/plugins/localStorage", ssr: false }
+    { src: "~/plugins/localStorage", ssr: false },
+    "~/plugins/fireauth.js"
   ]
 }
